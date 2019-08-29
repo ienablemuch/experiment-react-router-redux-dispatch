@@ -7,10 +7,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 
-const actionCreators = {
-    push
-};
-
 function App({ pathname, search, hash, push }) {
     function goAbout() {
         push("/about");
@@ -52,6 +48,10 @@ const mapStateToProps = state => ({
     search: state.router.location.search,
     hash: state.router.location.hash
 });
+
+const actionCreators = {
+    push
+};
 
 export default connect(
     mapStateToProps,
